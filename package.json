@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server/app.js",
+    "server-dev": "cross-env NODE_ENV=development nodemon server/app",
     "knex": "knex"
   },
   "keywords": [],
@@ -26,6 +26,7 @@
     "pg": "^7.8.1"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "nodemon": "^1.18.10"
   }
 }
