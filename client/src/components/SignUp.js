@@ -4,9 +4,6 @@ import { reduxForm, Field } from 'redux-form';
 import CustomInput from './CustomInput';
 
 class SignUp extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   onSubmit(formData) {
     console.log('onSubmit() got called');
