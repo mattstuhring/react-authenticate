@@ -4,6 +4,7 @@ React app using a RESTful API for authenticating users using Passport.js local &
 
 ## Built With
 
+* React
 * Node
 * Express
 * Passport
