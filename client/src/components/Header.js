@@ -17,32 +17,6 @@ class Header extends Component {
   }
 
   render() {
-
-    const isAuth = () => {
-      if (this.props.isAuth) {
-        return null;
-      }
-
-      return [
-        <li className="nav-item" key="signup">
-          <Link className="nav-link" to="/signup">Sign Up</Link>
-        </li>,
-        <li className="nav-item" key="signin">
-          <Link className="nav-link" to="/signin">Sign In</Link>
-        </li>
-      ]
-    }
-
-    const signOutLink = () => {
-      if (!this.props.isAuth) {
-        return null;
-      }
-
-      return <li className="nav-item">
-        <Link className="nav-link" to="/signout" onClick={this.handleSignOut}>Sign Out</Link>
-      </li>
-    }
-
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ marginBottom: '30px' }}>
         <Link className="navbar-brand" to="/">React Authenticate</Link>
@@ -59,13 +33,23 @@ class Header extends Component {
 
           <ul className="nav navbar-nav ml-auto">
 
-            { isAuth() }
+            { !this.props.isAuth ?
+              [<li className="nav-item" key="signup">
+                <Link className="nav-link" to="/signup">Sign Up</Link>
+              </li>,
+              <li className="nav-item" key="signin">
+                <Link className="nav-link" to="/signin">Sign In</Link>
+              </li>] : null }
 
-            { signOutLink() }
+            { this.props.isAuth ?
+              <li className="nav-item">
+                <Link className="nav-link" to="/signout" onClick={this.handleSignOut}>Sign Out</Link>
+              </li> : null }
+
           </ul>
         </div>
       </nav>
-    )
+    );
   }
 }
 

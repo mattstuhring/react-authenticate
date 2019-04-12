@@ -13,11 +13,11 @@ class SignUp extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(formData) {
+  async onSubmit(formData) {
     console.log('onSubmit() got called');
     console.log('formData ', formData);
     // We need to call some ActionCreator
-    this.props.signUp(formData);
+    await this.props.signUp(formData);
 
     if (!this.props.errorMessage) {
       this.props.history.push('/dashboard');
@@ -27,20 +27,11 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props; // handleSubmit -> redux-form method
 
-    let errorMessage;
-    if (this.props.errorMessage) {
-      errorMessage = <div className="alert alert-danger">
-                      { this.props.errorMessage }
-                    </div>;
-    } else {
-      errorMessage = null;
-    }
-
     return (
       <div className="container">
         <div className="row">
           <div className="col">
-            <form onSubmit={handleSubmit(this.onSubmit)}>
+            <form onSubmit={ handleSubmit(this.onSubmit) }>
               <div className="row">
                 <div className="col-sm-6 offset-sm-3">
                   <fieldset>
@@ -68,7 +59,10 @@ class SignUp extends Component {
               <div className="row">
                 <div className="col-sm-6 offset-sm-3">
 
-                  { errorMessage }
+                  { this.props.errorMessage ?
+                    <div className="alert alert-danger">
+                      { this.props.errorMessage }
+                    </div> : null }
 
                   <button type="submit" className="btn btn-primary float-right">Sign Up</button>
                 </div>
