@@ -12,7 +12,7 @@ const { validateBody, schemas } = require('../helpers/routeHelpers');
 const signToken = (userId) => {
   return JWT.sign(
     {
-      iss: 'fusedglass',
+      iss: 'test',
       sub: userId,
       iat: new Date().getTime(), // Current time
       exp: new Date().setDate(new Date().getDate() + 1) // Current time + 1 day ahead
