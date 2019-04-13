@@ -25,16 +25,28 @@ A step by step how to get a development env running.
 To get setup start from the root directory.
 
 ```
-npm install
+$ npm install
+```
+
+
+```
+$ cd client/
+```
+
+
+```
+$ npm install
 ```
 
 ### Start Development Environment
 
+From the root directory . . .
+
 ```
-npm run start-dev
+$ npm run start-dev
 ```
 
-## Author & Code
+## Author
 
-* **Matt Stuhring** - [My Github](https://github.com/mattstuhring)
-* **Authentication with Passport.js** - [Project Repository](https://github.com/mattstuhring/react-authenticate)
+* My Github - [Matt Stuhring](https://github.com/mattstuhring)
+* Project Repository - [Authentication with Passport.js](https://github.com/mattstuhring/react-authenticate)
