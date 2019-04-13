@@ -31,7 +31,7 @@ npm install
 ### Start Development Environment
 
 ```
-npm start
+npm run start-dev
 ```
 
 ## Author & Code
