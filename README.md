@@ -1,6 +1,6 @@
 # React Authenticate
 
-Simple React app using a Node.js RESTful API for authenticating users with Passport.js local & JWT strategies.
+Simple React app using a Node.js RESTful API for authenticating users via Passport.js local & JWT strategies
 
 ## Built With
 
@@ -14,29 +14,48 @@ Simple React app using a Node.js RESTful API for authenticating users with Passp
 
 ### Requirements
 
-Necessary tools for this project.
+Necessary tools for this project
 
 * Node.js
 * NPM
+* PostgreSQL
 
-### Install
+### Install Packages
 
-A step by step how to get a development env running.
-
-To get setup start from the root directory.
+To install npm packages start from the root directory
 
 ```
 $ npm install
 ```
-
 
 ```
 $ cd client/
 ```
 
-
 ```
 $ npm install
+```
+
+### Setup JWT Secret
+
+Create .env file & add jwt secret
+
+```
+JWT_SECRET=somejsonwebtokensecret
+```
+
+### Database
+
+Create a new PostgreSQL database & add details to knexfile.js
+
+Popluate database . . .
+
+```
+$ npm run knex migrate:latest
+```
+
+```
+$ npm run knex seed:run
 ```
 
 ### Start Development Environment
