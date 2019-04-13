@@ -1,6 +1,6 @@
 # React Authenticate
 
-React app using a RESTful API for authenticating users using Passport.js local & JWT strategies.
+Simple React app using a Node.js RESTful API for authenticating users via Passport.js local & JWT strategies.
 
 ## Built With
 
